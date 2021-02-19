@@ -46,7 +46,7 @@ Gmaestro state-update {
 The payload contains one entry per screen we want to update.
 
 - `<screen-id>`: the unique identifier for each screen, as supplied by the message `state-info` sent by Gamma Control.
-- `<blending-mode`: `0` for absolute, `1` for relative to profile
+- `<blending-mode>`: `0` for absolute, `1` for relative to profile
 - `<master-black>`/`<master-middle>`/`<master-white>`: floating point value for the master slider
 - `<red-black>`/`<red-middle>`/`<red-white>`: floating point value for the red slider
 - `<green-black>`/`<green-middle>`/`<green-white>`: floating point value for the green slider
@@ -84,7 +84,7 @@ Gmaestro state-info {
 The payload contains one entry per screen on the computer Gamma Control is running on.
 
 - `<screen-id>`: the unique identifier for each screen.
-- `<blending-mode`: `0` for absolute, `1` for relative to profile
+- `<blending-mode>`: `0` for absolute, `1` for relative to profile
 - `<master-black>`/`<master-middle>`/`<master-white>`: floating point value for the master slider
 - `<red-black>`/`<red-middle>`/`<red-white>`: floating point value for the red slider
 - `<green-black>`/`<green-middle>`/`<green-white>`: floating point value for the green slider
