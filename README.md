@@ -28,19 +28,19 @@ Gamma Control listens for messages on UDP port 44188.
 Tells Gamma Control to update the state for a list of screens. The command has this form:
 ```
 Gmaestro state-update {
-	<screen-id>: [
-		[
+	<screen-id>: {
+		"gamma": [
 			<blending-mode>,
 			<master-black>, <master-middle>, <master-white>,
 			<red-black>,    <red-middle>,    <red-white>,
 			<green-black>,  <green-middle>,  <green-white>,
 			<blue-black>,   <blue-middle>,   <blue-white>
 		],
-		<calibration-patterns>
-	],
-	<screen-id>: [
+		"content": <calibration-patterns>
+	},
+	<screen-id>: {
 		...
-	]
+	}
 }
 ```
 The payload contains one entry per screen we want to update.
@@ -66,19 +66,19 @@ When Gamma Control sends a response message, it sends it to the same port and ad
 Gamma Control sends the state of each of its screens in a `state-info` message in reply to a `state-update` message. The `state-info` message payload has the same form as the `state-update` message: 
 ```
 Gmaestro state-info {
-	<screen-id>: [
-		[
+	<screen-id>: {
+		"gamma": [
 			<blending-mode>,
 			<master-black>, <master-middle>, <master-white>,
 			<red-black>,    <red-middle>,    <red-white>,
 			<green-black>,  <green-middle>,  <green-white>,
 			<blue-black>,   <blue-middle>,   <blue-white>
 		],
-		<calibration-patterns>
-	],
-	<screen-id>: [
+		"content": <calibration-patterns>
+	},
+	<screen-id>: {
 		...
-	]
+	}
 }
 ```
 The payload contains one entry per screen on the computer Gamma Control is running on.
